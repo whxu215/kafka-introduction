@@ -53,3 +53,9 @@ Kafka中发布订阅的对象是topic。我们可以为每类数据创建一个t
 
 ![](/assets/WechatIMG9.jpeg)
 
+1. 每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。
+2. Kafka集群会保存所有的消息，不管消息有没有被消费；我们可以设定消息的过期时间，只有过期的数据才会被自动清除以释放磁盘空间。比如我们设置消息过期时间为2天，那么这2天内的所有消息都会被保存到集群中，数据只有超过了两天才会被清除。 
+3. Kafka需要维持的元数据只有一个即消费消息在Partition中的offset值，Consumer每消费一个消息，offset就会加1。其实消息的状态完全是由Consumer控制的，Consumer可以跟踪和重设这个offset值，这样的话Consumer就可以读取任意位置的消息。
+4. 把消息日志以Partition的形式存放有多重考虑，第一，方便在集群中扩展，每个Partition可以通过调整以适应它所在的机器，而一个 topic又可以有多个Partition组成，因此整个集群就可以适应任意大小的数据了；第二就是可以提高并发，因为可以以Partition为单位读写了。
+5. Kafka这些特性可以允许consumer随时接入或退出，对其它consumer没有任何影响。比如，你可以用命令行工具消息费任意topic而不会改变这些消息被其它consumer所消费。
+
