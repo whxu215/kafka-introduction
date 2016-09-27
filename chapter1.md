@@ -44,5 +44,12 @@ Kafka中发布订阅的对象是topic。我们可以为每类数据创建一个t
 
 * Broker：Kafka的服务实例就是一个broker
 
+  ![](/assets/WechatIMG8.jpeg)
 
-![](/assets/WechatIMG8.jpeg)
+
+### **2.5 Kafka Topic&Partition**
+
+消息发送时都被发送到一个topic，其本质就是一个目录，而topic由是由一些Partition Logs\(分区日志\)组成,其组织结构如下图所示：
+
+![](/assets/WechatIMG9.jpeg)
+
