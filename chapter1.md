@@ -45,4 +45,4 @@ Kafka中发布订阅的对象是topic。我们可以为每类数据创建一个t
 * Broker：Kafka的服务实例就是一个broker
 
 
-
+![](/assets/WechatIMG8.jpeg)
