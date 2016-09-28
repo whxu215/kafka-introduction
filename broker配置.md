@@ -18,8 +18,9 @@
 |log.flush.interval.ms|log文件”sync”到磁盘的时间间隔。如果在这个时间到达时积累的消息条数未达到，同样也会做“sync”操作|long|null|
 |log.retention.hours|数据存储的最长时间(小时), 过了这个时间的数据会被删除|int|168|
 |log.retention.minutes|数据存储的最长时间(分钟), 过了这个时间的数据会被删除。优先级高于log.retention.hours|int|null|
-|log.retention.ms|数据存储的最长时间(毫秒), 过了这个时间的数据会被删除。优先级高于log.retention.minutes|int|null|
+|log.retention.ms|数据文件存储的最长时间(毫秒), 过了这个时间的文件会被删除。优先级高于log.retention.minutes|int|null|
 |log.retention.bytes|topic每个分区的文件大小，topic分区文件是由多个segment文件组成,所有segment文件大小总和要小于该配置， 和log.retention.hour任意一个达到要求，都会执行删除，会被topic创建时的指定参数覆盖|long|-1|
+
 
 
 
