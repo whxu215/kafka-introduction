@@ -5,4 +5,6 @@
 * [3 Kafka技术概览](chapter1.md)
 * [4 Kafka 核心组件](kafka-核心组件.md)
 * [5 Kafka核心特性](kafka核心特性.md)
+* [6 Kafka配置](kafka配置.md)
+    * [6.1 broker配置](broker配置.md)
 
