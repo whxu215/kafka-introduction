@@ -20,6 +20,13 @@
 |log.retention.minutes|数据存储的最长时间(分钟), 过了这个时间的数据会被删除。优先级高于log.retention.hours|int|null|
 |log.retention.ms|数据文件存储的最长时间(毫秒), 过了这个时间的文件会被删除。优先级高于log.retention.minutes|int|null|
 |log.retention.bytes|topic每个分区的文件大小，topic分区文件是由多个segment文件组成,所有segment文件大小总和要小于该配置， 和log.retention.hour任意一个达到要求，都会执行删除，会被topic创建时的指定参数覆盖|long|-1|
+|log.segment.bytes|topic的分区是以一堆segment文件存储的，这个控制每个segment的大小，会被topic创建时的指定参数覆盖|int|1073741824|
+|log.retention.check.interval.ms|log清理周期，每隔这个时间会检查log是否触发了删除的规则，如果触发则会被删除|long|300000|
+
+
+
+
+
 
 
 
