@@ -2,9 +2,37 @@
 
 | 名称 | 描述 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| broker.id | kafka服务ID. 在kafka集群中需唯一 | int | -1 |
-| log.dirs | kafka 日志数据目录, 如果有多个以逗号间隔 | string | null |
-| zookeeper.connect | zookeeper连接串。e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002" | string | "" |
+| bootstrap.servers | kafka server list. (host1:port1,host2:port2,...) | list |  |
+| key.serializer| key序列化类实现Serializer interface | class |  |
+|value.serializer| value 序列化类实现Serializer interface| class||
+|acks|指producer要求leader在收到几个确认通知后才认为当前消息接受成功。0：producer不会等待任何ack，直接把消息发送出去就不管了，retries配置也不会起作用，因为producer根本不知道消息发送成功还是失败；1：leader把消息写入本地的log后就会回复成功，不会等到followers回复；all：leader会等到所有isr(in-sync replicas)通知都到位后才会回复成功，这个能最高级别确保消息不会丢失|string|1
+|buffer.memory|producer端用来存放尚未发送出去的Message的缓冲区大小。缓冲区满了之后可以选择阻塞发送或抛出异常，由block.on.buffer.full的配置来决定|long|33554432|
+|compression.type|消息压缩方式none, gzip, snappy, or lz4|string|none|
+|retries|如果设置一个大于0的数producer会在发送失败的时候重新发送消息|int|0|
+|batch.size|produce尝试把发到同一相partition的消息进行批量发送，该配置就是批量消息数。这对client端与server的性能有很大的提高。|int|16384|
+|client.id|用来标识某个client端，该id会被发送到kafka server.|string|""|
+|connections.max.idle.ms|connection空闲时间达到该配置时，该connection会被关闭|long|540000|
+|linger.ms|Producer默认会把两次发送时间间隔内收集到的所有Requests进行一次聚合然后再发送，以此提高吞吐量，而linger.ms则更进一步，这个参数为每次发送增加一些delay，以此来聚合更多的Message。|long|0|
+|max.block.ms|控制block的时长,当buffer空间不够或者metadata丢失时产生block。KafkaProducer.send() 和KafkaProducer.partitionsFor()可能产生block.|long |60000|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
