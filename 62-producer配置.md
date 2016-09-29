@@ -23,6 +23,10 @@
 |interceptor.classes|producer在把消息发送到kafka之前的拦截器需实现ProducerInterceptor接口，默认没有|list|null|
 |max.in.flight.requests.per.connection|producer每个连接的最大
 无ack请求个数。如果该配置大于1，且设置了重试，有可能会导致消息乱序。|int|5|
+|metadata.fetch.timeout.ms|取元数据操作的超时时间|long|60000|
+|metadata.max.age.ms|元数据过期时间，过了这个时间会再次取一下最新的元数据|long|300000|
+
+
 
 
 
