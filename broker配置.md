@@ -23,5 +23,13 @@
 | log.segment.bytes | topic的分区是以一堆segment文件存储的，这个控制每个segment的大小，会被topic创建时的指定参数覆盖 | int | 1073741824 |
 | log.retention.check.interval.ms | log清理周期，每隔这个时间会检查log是否触发了删除的规则，如果触发则会被删除 | long | 300000 |
 | zookeeper.connect | zookeeper连接串。e.g. "127.0.0.1:3000,127.0.0.1:3001,127.0.0.1:3002" | string | "" |
+| zookeeper.connection.timeout.ms | zookeeper连接超时时间, 如果不设置则用zookeeper.session.timeout.ms| string | "" |
+|zookeeper.session.timeout.ms| zookeeper session超时时间，就是心跳间隔，如果在这个时间内没有心跳则认为zookeeper已经挂掉了|int|6000|
+
+
+
+
+
+
 
 
