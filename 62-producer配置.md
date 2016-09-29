@@ -21,6 +21,8 @@
 |send.buffer.bytes|TCP send buffer (SO_SNDBUF)|int|131072|
 |block.on.buffer.full|当缓存补耗尽时的处理行为。false:会阻塞max.block.ms时间，如果到了这个时间缓存还是没有释放出足够空间则抛出TimeoutException; true: 当缓存被耗尽时直接抛出BufferExhaustException|boolean|false|
 |interceptor.classes|producer在把消息发送到kafka之前的拦截器需实现ProducerInterceptor接口，默认没有|list|null|
+|max.in.flight.requests.per.connection|producer每个连接的最大
+无ack请求个数。如果该配置大于1，且设置了重试，有可能会导致消息乱序。|int|5|
 
 
 
