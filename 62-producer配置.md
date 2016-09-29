@@ -14,6 +14,17 @@
 |connections.max.idle.ms|connection空闲时间达到该配置时，该connection会被关闭|long|540000|
 |linger.ms|Producer默认会把两次发送时间间隔内收集到的所有Requests进行一次聚合然后再发送，以此提高吞吐量，而linger.ms则更进一步，这个参数为每次发送增加一些delay，以此来聚合更多的Message。|long|0|
 |max.block.ms|控制block的时长,当buffer空间不够或者metadata丢失时产生block。KafkaProducer.send() 和KafkaProducer.partitionsFor()可能产生block.|long |60000|
+|max.request.size|请求的最大字节数。这也是对最大记录尺寸的有效覆盖。注意：server具有自己对消息记录尺寸的覆盖，这些尺寸和这个设置不同。此项设置将会限制producer每次批量发送请求的数目，以防发出巨量的请求。|int|1048576|
+|partitioner.class|分区类，实现Partitioner interface.|class|org.apache.kafka.clients.producer.internals.DefaultPartitioner|
+|receive.buffer.bytes|socket的接收缓存空间大小,当阅读数据时使用|int|32768|
+
+
+
+
+
+
+
+
 
 
 
