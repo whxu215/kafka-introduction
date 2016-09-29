@@ -8,4 +8,5 @@
 * [6 Kafka配置](kafka配置.md)
     * [6.1 Broker配置](broker配置.md)
     * [6.2 Producer配置](62-producer配置.md)
+    * [6.3 Consumer配置](63-consumer配置.md)
 
