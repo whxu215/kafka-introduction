@@ -19,8 +19,7 @@
 |receive.buffer.bytes|socket的接收缓存空间大小,当阅读数据时使用|int|32768|
 |request.timeout.ms|客户端将等待请求的响应的最大时间,如果在这个时间内没有收到响应，客户端将重发请求;超过重试次数将抛异常|int|30000|
 |send.buffer.bytes|TCP send buffer (SO_SNDBUF)|int|131072|
-|block.on.buffer.full|当缓存补耗尽时的处理行为。false: 
-会阻塞max.block.ms时间，如果到了这个时间缓存还是没有释放出足够空间则抛出TimeoutException; true: 当缓存被耗尽时直接抛出BufferExhaustException|boolean|false|
+|block.on.buffer.full|当缓存补耗尽时的处理行为。false:会阻塞max.block.ms时间，如果到了这个时间缓存还是没有释放出足够空间则抛出TimeoutException; true: 当缓存被耗尽时直接抛出BufferExhaustException|boolean|false|
 
 
 
