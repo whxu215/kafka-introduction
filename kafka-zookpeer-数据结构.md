@@ -91,7 +91,6 @@ _**Zookeeper路径：/controller
 ***Controller:*** Kafka在所有broker中选出一个broker做为controller。
 
 _**Schema:**_
-
 ```
 
 { "fields":
