@@ -86,9 +86,34 @@ _**Zookeeper路径：**_ /controller_epoch -> int (epoch)
 ***Controller epoch:*** 自增数字，在controller每次选举时该数会加1
 
 ## **7.5 Controller 注册信息数据结构**
-_**Zookeeper路径：/controller -> int (broker id of the controller)
+_**Zookeeper路径：/controller 
 
 ***Controller:*** Kafka在所有broker中选出一个broker做为controller。
+
+_**Schema:**_
+
+```
+
+{ "fields":
+ [ {"name": "version", "type": "int", "doc": "version id"},
+   {"name": "brokerid", "type": "int", "doc": "id of the broker selected as controller"},
+ ]
+}
+
+```
+
+_**Example:**_
+
+
+
+```
+{
+"version":1,
+"brokerid":0,
+"timestamp":"1476709166397"
+}
+```
+
 
 
 
