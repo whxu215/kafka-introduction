@@ -24,6 +24,10 @@
 
 
 ## **7.2 Partition state数据结构**
+***Zookeeper路径：*** /brokers/topics/[topic]/partitions/[partitionId]/state
+
+
+
 
 
 
