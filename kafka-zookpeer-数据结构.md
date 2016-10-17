@@ -1,6 +1,7 @@
 ## **7.1 Topic数据结构**
 
 ***Zookeeper路径：*** \/brokers\/topics\/\[topic\]
+
 ***Schema:***
 ```
 { "fields" :
