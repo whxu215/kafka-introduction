@@ -45,17 +45,17 @@ _**Schema:**_
 }
 ```
 
-_**Example:**_
+***Example:***
 
 ```
-
 {
-
 "version": 1,
-
-"partitions": {"0": [0, 1, 3] } }
-
+"isr": [0,1],
+"leader": 0,
+"controller_epoch": 1,
+"leader_epoch": 0
 }
+
 
 ```
 
