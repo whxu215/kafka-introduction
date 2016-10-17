@@ -30,7 +30,6 @@ _**Example:**_
 _**Zookeeper路径：**_ \/brokers\/topics\/\[topic\]\/partitions\/\[partitionId\]\/state
 
 _**Schema:**_
-
 ```
 { "fields":
     [ {"name": "version", "type": "int", "doc": "version id"},
@@ -45,8 +44,7 @@ _**Schema:**_
 }
 ```
 
-***Example:***
-
+_**Example:**_
 ```
 {
 "version": 1,
