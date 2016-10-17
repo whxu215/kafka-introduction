@@ -6,7 +6,8 @@
 { "fields" :
     [ {"name": "version", "type": "int", "doc": "version id"},
     {"name": "partitions","type": 
-        {"type": "map", "values": {"type": "array", "items":"int", "doc": "a list of     replica ids"},
+        {"type": "map", "values": {"type": "array", "items":"int", "doc": "a list of
+     replica ids"},
     "doc": "a map from partition id to replica list"},
     }
     ]
