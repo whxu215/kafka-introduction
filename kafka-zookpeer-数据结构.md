@@ -1,8 +1,9 @@
 ## **7.1 Topic数据结构**
 
-***Zookeeper路径：*** \/brokers\/topics\/\[topic\]
+_**Zookeeper路径：**_ \/brokers\/topics\/\[topic\]
 
-***Schema:***
+_**Schema:**_
+
 ```
 { "fields" :
     [ {"name": "version", "type": "int", "doc": "version id"},
@@ -14,7 +15,9 @@
     ]
 }
 ```
-***Example:***
+
+_**Example:**_
+
 ```
 {
 "version": 1,
@@ -22,11 +25,11 @@
 }
 ```
 
-
 ## **7.2 Partition state数据结构**
-***Zookeeper路径：*** /brokers/topics/[topic]/partitions/[partitionId]/state
 
-***Schema:***
+_**Zookeeper路径：**_ \/brokers\/topics\/\[topic\]\/partitions\/\[partitionId\]\/state
+
+_**Schema:**_
 
 ```
 { "fields":
@@ -35,13 +38,14 @@
         id of replicas in isr"}
       },
       {"name": "leader", "type": "int", "doc": "id of the leader replica"},
-      {"name": "controller_epoch", "type": "int", "doc": "epoch of the controller that last updated the leader and isr info"},
+      {"name": "controller_epoch", "type": "int", "doc": "epoch of the controller 
+        that last updated the leader and isr info"},
       {"name": "leader_epoch", "type": "int", "doc": "epoch of the leader"}
     ]
 }
 ```
 
-***Example:***
+_**Example:**_
 
 ```
 
@@ -54,10 +58,4 @@
 }
 
 ```
-
-
-
-
-
-
 
