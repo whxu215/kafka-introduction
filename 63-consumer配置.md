@@ -19,6 +19,14 @@
 | request.timeout.ms | 客户端将等待请求的响应的最大时间,如果在这个时间内没有收到响应，客户端将重发请求;超过重试次数将抛异常 | int | 40000 |
 | send.buffer.bytes | TCP send buffer \(SO\_SNDBUF\) | int | 131072 |
 | auto.commit.interval.ms | consumer offset自动提交到Kafka的周期 | long | 5000 |
+|interceptor.classes| consumer拦截器类，需要实现ConsumerInterceptor，拦截所有consumer的消息，甚至可以修改消息|list|null|
+|metadata.max.age.ms|强制刷新(metadata)元数据的周期，即使在这个时间内没有发现brokes, partitions改变|long|300000|
+|reconnect.backoff.ms|在连不上Kafka broker时等待该配置的时间后再得连，防止快速的死循环不停地重连导致CPU使用率过高|long|50|
+|retry.backoff.ms|请求消息发送失败后的重试等待时间，防止快速的死循环导致CPU使用率过高|long|100|
+
+
+
+
 
 
 
