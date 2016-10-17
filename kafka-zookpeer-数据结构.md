@@ -103,9 +103,6 @@ _**Schema:**_
 ```
 
 _**Example:**_
-
-
-
 ```
 {
 "version":1,
