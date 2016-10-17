@@ -53,7 +53,5 @@ _**Example:**_
 "controller_epoch": 1,
 "leader_epoch": 0
 }
-
-
 ```
 
