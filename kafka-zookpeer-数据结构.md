@@ -88,7 +88,7 @@ _**Zookeeper路径：**_ /controller_epoch -> int (epoch)
 ## **7.5 Controller 注册信息数据结构**
 _**Zookeeper路径：/controller -> int (broker id of the controller)
 
-***Controller:*** Kafka在所有broker中选出一个broker做为controller, 所有partition的leader选举都由controller决定。
+***Controller:*** Kafka在所有broker中选出一个broker做为controller。
 
 
 
