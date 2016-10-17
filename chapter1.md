@@ -43,6 +43,7 @@ Kafka中发布订阅的对象是topic。我们可以为每类数据创建一个t
 * Consumer：订阅topic消费消息的一方
 
 * Broker：Kafka的服务实例就是一个broker
+* Controller：Kafka在所有broker中选出一个broker做为controller, 所有partition的leader选举都由controller决定。Controller会将Leader的改变直接通过RPC的方式（比ZooKeeper Queue的方式更高效）通知需为为此作为响应的Broker。同时controller也负责增删Topic以及Replica的重新分配。
 
   ![](/assets/WechatIMG8.jpeg)
 
