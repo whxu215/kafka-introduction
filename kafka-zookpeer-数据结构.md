@@ -92,7 +92,6 @@ _**Zookeeper路径：/controller
 
 _**Schema:**_
 ```
-
 { "fields":
  [ {"name": "version", "type": "int", "doc": "version id"},
    {"name": "brokerid", "type": "int", "doc": "id of the broker selected as controller"},
@@ -100,7 +99,6 @@ _**Schema:**_
 }
 
 ```
-
 _**Example:**_
 ```
 {
