@@ -80,4 +80,52 @@ _**Example:**_
 }
 ```
 
+## **7.4 Controller epoch数据结构**
+_**Zookeeper路径：**_ /brokers/ids/[brokerId]
+
+
+
+_**Schema:**_
+
+
+
+```
+
+{ "fields":
+
+ [ {"name": "version", "type": "int", "doc": "version id"},
+
+ {"name": "host", "type": "string", "doc": "ip address or host name of the broker"},
+
+ {"name": "port", "type": "int", "doc": "port of the broker"},
+
+ {"name": "jmx_port", "type": "int", "doc": "port for jmx"}
+
+ ]
+
+}
+
+```
+
+_**Example:**_
+
+
+
+```
+
+{
+
+"version": 1,
+
+"host": "192.168.1.148",
+
+"port": 9092,
+
+"jmx_port": 9999
+
+}
+
+```
+
+
 
