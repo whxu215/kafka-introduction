@@ -108,8 +108,6 @@ _**Example:**_
 }
 ```
 
-
-
 ## **7.6 Consumer 注册信息数据结构**
 
 _**Zookeeper路径：/consumers/[groupId]/ids/[consumerId]
@@ -151,6 +149,126 @@ A blacklist subscription:
 "subscription": {"abc": 1}
 }
 ```
+
+
+## **7.7 Consumer owner(所有者)数据结构**
+
+_**Zookeeper路径：**_ /consumers/[groupId]/owners/[topic]/[partitionId] -> string (consumerId)
+
+
+## **7.8 Consumer offset数据结构**
+
+_**Zookeeper路径：**_ /consumers/[groupId]/offsets/[topic]/[partitionId] -> long (offset)
+
+
+
+## **7.9 Re-assign partitions(分区重新分配)数据结构**
+
+_**Zookeeper路径：/admin/reassign_partitions
+
+_**Schema:**_
+
+```
+{
+"fields":[
+    {
+    "name":"version",
+    "type":"int",
+    "doc":"version id"
+    },
+    {
+    "name":"partitions",
+    "type":{
+        "type":"array",
+        "items":{
+            "fields":[
+            {
+            "name":"topic",
+            "type":"string",
+            "doc":"topic of the partition to be reassigned"
+            },
+            {
+            "name":"partition",
+            "type":"int",
+            "doc":"the partition to be reassigned"
+            },
+            {
+            "name":"replicas",
+            "type":"array",
+            "items":"int",
+            "doc":"a list of replica ids"
+            }
+            ],
+        }
+        "doc":"an array of partitions to be reassigned to new replicas"
+      }    
+    }
+  ]
+}
+
+
+
+
+
+
+```
+
+
+
+_**Example:**_
+
+
+
+```
+
+A static subscription:
+
+{
+
+"version": 1,
+
+"pattern": "static",
+
+"subscription": {"topic1": 1, "topic2": 2}
+
+}
+
+
+
+A whitelist subscription:
+
+{
+
+"version": 1,
+
+"pattern": "white_list",
+
+"subscription": {"abc": 1}
+
+}
+
+
+
+A blacklist subscription:
+
+{
+
+"version": 1,
+
+"pattern": "black_list",
+
+"subscription": {"abc": 1}
+
+}
+
+```
+
+
+
+
+
+
+
 
 
 
