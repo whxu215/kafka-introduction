@@ -205,62 +205,21 @@ _**Schema:**_
     }
   ]
 }
-
-
-
-
-
-
 ```
-
-
 
 _**Example:**_
-
-
-
 ```
-
-A static subscription:
-
 {
-
 "version": 1,
-
-"pattern": "static",
-
-"subscription": {"topic1": 1, "topic2": 2}
-
+"partitions":
+  [
+    {
+    "topic": "Foo",
+    "partition": 1,
+    "replicas": [0, 1, 3]
+    }
+  ]
 }
-
-
-
-A whitelist subscription:
-
-{
-
-"version": 1,
-
-"pattern": "white_list",
-
-"subscription": {"abc": 1}
-
-}
-
-
-
-A blacklist subscription:
-
-{
-
-"version": 1,
-
-"pattern": "black_list",
-
-"subscription": {"abc": 1}
-
-}
-
 ```
 
 
