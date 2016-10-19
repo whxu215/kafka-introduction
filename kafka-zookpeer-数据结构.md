@@ -112,28 +112,17 @@ _**Example:**_
 
 ## **7.6 Consumer 注册信息数据结构**
 
-_**Zookeeper路径：/controller
-
-
-
-***Controller:*** Kafka在所有broker中选出一个broker做为controller。
-
-
+_**Zookeeper路径：/consumers/[groupId]/ids/[consumerId]
 
 _**Schema:**_
 
 ```
-
 { "fields":
-
- [ {"name": "version", "type": "int", "doc": "version id"},
-
- {"name": "brokerid", "type": "int", "doc": "id of the broker selected as controller"},
-
- ]
-
+    [ {"name": "version", "type": "int", "doc": "version id"},
+      {"name": "pattern", "type": "string", "doc": "can be of static, white_list or     black_list"},
+      {"name": "subscription", "type" : {"type": "map", "values": {"type": "int"},
+       "doc": "a map from a topic or a wildcard pattern to the number of streams"} } ]
 }
-
 
 
 ```
