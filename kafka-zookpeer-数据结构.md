@@ -130,17 +130,26 @@ _**Schema:**_
 _**Example:**_
 
 ```
-
+A static subscription:
 {
-
-"version":1,
-
-"brokerid":0,
-
-"timestamp":"1476709166397"
-
+"version": 1,
+"pattern": "static",
+"subscription": {"topic1": 1, "topic2": 2}
 }
 
+A whitelist subscription:
+{
+"version": 1,
+"pattern": "white_list",
+"subscription": {"abc": 1}
+}
+
+A blacklist subscription:
+{
+"version": 1,
+"pattern": "black_list",
+"subscription": {"abc": 1}
+}
 ```
 
 
