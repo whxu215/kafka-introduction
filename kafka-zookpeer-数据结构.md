@@ -1,6 +1,6 @@
 ## **7.1 Topic数据结构**
 
-_**Zookeeper路径：**_ \/brokers\/topics\/\[topic\]
+_**Zookeeper路径：**_ /brokers/topics/\[topic\]
 
 _**Schema:**_
 
@@ -27,9 +27,10 @@ _**Example:**_
 
 ## **7.2 Partition state数据结构**
 
-_**Zookeeper路径：**_ \/brokers\/topics\/\[topic\]\/partitions\/\[partitionId\]\/state
+_**Zookeeper路径：**_ /brokers/topics/\[topic\]/partitions/\[partitionId\]/state
 
 _**Schema:**_
+
 ```
 { "fields":
     [ {"name": "version", "type": "int", "doc": "version id"},
@@ -43,7 +44,9 @@ _**Schema:**_
     ]
 }
 ```
+
 _**Example:**_
+
 ```
 {
 "version": 1,
@@ -56,7 +59,7 @@ _**Example:**_
 
 ## **7.3 Broker注册信息数据结构**
 
-_**Zookeeper路径：**_ /brokers/ids/[brokerId]
+_**Zookeeper路径：**_ /brokers/ids/\[brokerId\]
 
 _**Schema:**_
 
@@ -69,6 +72,7 @@ _**Schema:**_
     ]
 }
 ```
+
 _**Example:**_
 
 ```
@@ -81,25 +85,29 @@ _**Example:**_
 ```
 
 ## **7.4 Controller epoch数据结构**
-_**Zookeeper路径：**_ /controller_epoch -> int (epoch)
 
-***Controller epoch:*** 自增数字，在controller每次选举时该数会加1
+_**Zookeeper路径：**_ /controller\_epoch -&gt; int \(epoch\)
+
+_**Controller epoch:**_ 自增数字，在controller每次选举时该数会加1
 
 ## **7.5 Controller 注册信息数据结构**
-_**Zookeeper路径：/controller 
 
-***Controller:*** Kafka在所有broker中选出一个broker做为controller。
+\_\*\*Zookeeper路径：/controller
+
+_**Controller:**_ Kafka在所有broker中选出一个broker做为controller。
 
 _**Schema:**_
+
 ```
 { "fields":
  [ {"name": "version", "type": "int", "doc": "version id"},
    {"name": "brokerid", "type": "int", "doc": "id of the broker selected as controller"},
  ]
 }
-
 ```
+
 _**Example:**_
+
 ```
 {
 "version":1,
@@ -110,7 +118,7 @@ _**Example:**_
 
 ## **7.6 Consumer 注册信息数据结构**
 
-_**Zookeeper路径：/consumers/[groupId]/ids/[consumerId]
+\_\*\*Zookeeper路径：/consumers/\[groupId\]/ids/\[consumerId\]
 
 _**Schema:**_
 
@@ -121,8 +129,6 @@ _**Schema:**_
       {"name": "subscription", "type" : {"type": "map", "values": {"type": "int"},
        "doc": "a map from a topic or a wildcard pattern to the number of streams"} } ]
 }
-
-
 ```
 
 _**Example:**_
@@ -150,21 +156,17 @@ A blacklist subscription:
 }
 ```
 
+## **7.7 Consumer owner\(所有者\)数据结构**
 
-## **7.7 Consumer owner(所有者)数据结构**
-
-_**Zookeeper路径：**_ /consumers/[groupId]/owners/[topic]/[partitionId] -> string (consumerId)
-
+_**Zookeeper路径：**_ /consumers/\[groupId\]/owners/\[topic\]/\[partitionId\] -&gt; string \(consumerId\)
 
 ## **7.8 Consumer offset数据结构**
 
-_**Zookeeper路径：**_ /consumers/[groupId]/offsets/[topic]/[partitionId] -> long (offset)
+_**Zookeeper路径：**_ /consumers/\[groupId\]/offsets/\[topic\]/\[partitionId\] -&gt; long \(offset\)
 
+## **7.9 Re-assign partitions\(分区重新分配\)数据结构**
 
-
-## **7.9 Re-assign partitions(分区重新分配)数据结构**
-
-_**Zookeeper路径：/admin/reassign_partitions
+\_\*\*Zookeeper路径：/admin/reassign\_partitions
 
 _**Schema:**_
 
@@ -208,6 +210,7 @@ _**Schema:**_
 ```
 
 _**Example:**_
+
 ```
 {
 "version": 1,
@@ -221,16 +224,6 @@ _**Example:**_
   ]
 }
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 
