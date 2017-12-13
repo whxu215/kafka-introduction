@@ -19,5 +19,25 @@ segment file中index与data file对应关系图:![](/assets/index-file.png)segme
 
 **注：**Partition中的每条message由offset来表示它在这个partition中的偏移量，这个offset并不是该Message在partition中实际存储位置，而是逻辑上的一个值（如上面的3），但它却唯一确定了partition中的一条Message（可以认为offset是partition中Message的id）。
 
+### 6.1.2 message文件
+
+message中的物理结构为：
+
+![](/assets/message-format.png)
+
+参数说明：
+
+| 关键字 | 解释说明 |
+| :--- | :--- |
+| 8 byte offset | 在parition\(分区\)内的每条消息都有一个有序的id号，这个id号被称为偏移\(offset\),它可以唯一确定每条消息在parition\(分区\)内的位置。即offset表示partiion的第多少message |
+| 4 byte message size | message大小 |
+| 4 byte CRC32 | 用crc32校验message |
+| 1 byte “magic” | 表示本次发布Kafka服务程序协议版本号 |
+| 1 byte “attributes” | 表示为独立版本、或标识压缩类型、或编码类型 |
+| 4 byte key length | 表示key的长度,当key为-1时，K byte key字段不填 |
+| K byte key | 可选 |
+| value bytes payload | 表示实际消息数据 |
+
+  
 
 
