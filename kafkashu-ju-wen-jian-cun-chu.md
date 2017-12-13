@@ -42,8 +42,8 @@ message中的物理结构为：
 
 我们首先试想一下，如果对于Kafka的一个topic而言，如果topic的partition中只有一个数据文件的话会怎么样？
 
-* 新数据是添加在文件末尾（调用FileMessageSet的append方法），不论文件数据文件有多大，这个操作永远都是O\(1\)的。
-* 查找某个offset的Message（调用FileMessageSet的searchFor方法）是顺序查找的。因此，如果数据文件很大的话，查找的效率就低。
+* 新数据是添加在文件末尾，不论文件数据文件有多大，这个操作永远都是O\(1\)的。
+* 查找某个offset的Message是顺序查找的。因此，如果数据文件很大的话，查找的效率就低。
 
 
 
