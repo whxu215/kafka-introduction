@@ -1,4 +1,4 @@
-## **7.1 Topic数据结构**
+## 8**.1 Topic数据结构**
 
 _**Zookeeper路径：**_ /brokers/topics/\[topic\]
 
@@ -25,7 +25,7 @@ _**Example:**_
 }
 ```
 
-## **7.2 Partition state数据结构**
+## 8**.2 Partition state数据结构**
 
 _**Zookeeper路径：**_ /brokers/topics/\[topic\]/partitions/\[partitionId\]/state
 
@@ -57,7 +57,7 @@ _**Example:**_
 }
 ```
 
-## **7.3 Broker注册信息数据结构**
+## 8**.3 Broker注册信息数据结构**
 
 _**Zookeeper路径：**_ /brokers/ids/\[brokerId\]
 
@@ -84,13 +84,13 @@ _**Example:**_
 }
 ```
 
-## **7.4 Controller epoch数据结构**
+## 8**.4 Controller epoch数据结构**
 
 _**Zookeeper路径：**_ /controller\_epoch -&gt; int \(epoch\)
 
 _**Controller epoch:**_ 自增数字，在controller每次选举时该数会加1
 
-## **7.5 Controller 注册信息数据结构**
+## 8**.5 Controller 注册信息数据结构**
 
 \_\*\*Zookeeper路径：/controller
 
@@ -116,7 +116,7 @@ _**Example:**_
 }
 ```
 
-## **7.6 Consumer 注册信息数据结构**
+## 8**.6 Consumer 注册信息数据结构**
 
 \_\*\*Zookeeper路径：/consumers/\[groupId\]/ids/\[consumerId\]
 
@@ -156,15 +156,15 @@ A blacklist subscription:
 }
 ```
 
-## **7.7 Consumer owner\(所有者\)数据结构**
+## 8**.7 Consumer owner\(所有者\)数据结构**
 
 _**Zookeeper路径：**_ /consumers/\[groupId\]/owners/\[topic\]/\[partitionId\] -&gt; string \(consumerId\)
 
-## **7.8 Consumer offset数据结构**
+## 8**.8 Consumer offset数据结构**
 
 _**Zookeeper路径：**_ /consumers/\[groupId\]/offsets/\[topic\]/\[partitionId\] -&gt; long \(offset\)
 
-## **7.9 Re-assign partitions\(分区重新分配\)数据结构**
+## 8**.9 Re-assign partitions\(分区重新分配\)数据结构**
 
 \_\*\*Zookeeper路径：/admin/reassign\_partitions
 
